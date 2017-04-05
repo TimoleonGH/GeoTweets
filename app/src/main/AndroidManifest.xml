@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.leon.lamti.sylvester">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".SylvesterHeart"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Google Play services -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="******google_services_api_key******" />
+
+        <activity
+            android:name=".SylvesterBrain"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".unrelatedStuff.SearchResults"
+            android:label="@string/title_activity_search_results"
+            android:parentActivityName=".SylvesterBrain"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SylvesterBrain" />
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:parentActivityName=".SylvesterBrain"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".SylvesterBrain" />
+
+        <activity
+            android:name=".storagedSearches.StoragedSearches"
+            android:parentActivityName=".SylvesterBrain">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SylvesterBrain" />
+        </activity>
+        <activity android:name=".unrelatedStuff.MapActivity" />
+        <activity android:name=".storagedSearches.ExportedData"></activity>
+    </application>
+
+</manifest>

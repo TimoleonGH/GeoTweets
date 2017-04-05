@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".unrelatedStuff.SearchResults"
+    tools:showIn="@layout/activity_search_results"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="14">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="13" >
+
+            <android.support.v7.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:scrollbarTrackVertical="@drawable/track"
+                android:scrollbarThumbVertical="@drawable/fastscroller_track" />
+
+            <com.leon.lamti.sylvester.utilities.FastScroller
+                android:id="@+id/fast_scroller"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="6"
+                android:layout_weight="1">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/editText"
+                    android:layout_weight="4"
+                    android:hint="type here!"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:background="@android:color/holo_blue_bright"
+                    android:textColorHint="#ffffff"
+                    android:autoText="false" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Search"
+                    android:background="@color/colorAccent"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
